@@ -13,3 +13,6 @@ font-size: 18px
 line-height: 24px
 body-font: verdana
 heading-font: verdana
+
+
+Terminology: an email network
