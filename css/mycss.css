@@ -12,3 +12,25 @@
 	min-height: 95vh;
 	flex-direction: column;
 }
+
+.button-warning-my {
+	background-color: #faa732;
+	color: #fff;
+}
+
+.button-warning-my:hover {
+	background-color: #fcb046;
+	color: #fff;
+}
+
+.chat-color {
+	background-color: #8cc14c;
+}
+
+.triangle-color {
+	background-color: #faa732;
+}
+
+.activists-color {
+	background-color: #da314b;
+}
