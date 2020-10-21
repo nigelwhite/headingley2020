@@ -16,3 +16,8 @@ heading-font: verdana
 
 
 Terminology: an email network
+
+
+Sizes:
+uk-margin 15px
+uk-margin-large 50px
