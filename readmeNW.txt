@@ -1,3 +1,10 @@
+Remote server
+http://www.headingley.org/cpanel
+temp cpanel https://server4.pcs-net.com:2083/
+user headingl
+pass :PT767gcsjLH:1
+
+
 Using v2 https://getuikit.com/v2
 
 After download of UIkit and unzip, I had to do sudo chmod -R 0775 on the parent directory or UIkit files were not loaded.
