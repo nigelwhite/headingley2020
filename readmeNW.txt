@@ -3,6 +3,7 @@ http://www.headingley.org/cpanel
 temp cpanel https://server4.pcs-net.com:2083/
 user headingl
 pass :PT767gcsjLH:1
+php 7.4
 
 
 Using v2 https://getuikit.com/v2
