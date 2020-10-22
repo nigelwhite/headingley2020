@@ -13,6 +13,13 @@
 	flex-direction: column;
 }
 
+@media only screen and (min-width: 768px) {
+	.site-my {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
 .navbar-my {
 	height: 75px;
 }
