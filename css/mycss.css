@@ -13,6 +13,14 @@
 	flex-direction: column;
 }
 
+.navbar-my {
+	height: 75px;
+}
+
+.logo-nav-my {
+	padding: 5px 20px;
+}
+
 .button-warning-my {
 	background-color: #faa732;
 	color: #fff;
