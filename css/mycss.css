@@ -18,6 +18,15 @@
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
+	.site-content-my {
+		padding: 0 50px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.site-content-my {
+		padding: 100px;
+	}
 }
 
 .navbar-my {
