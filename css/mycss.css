@@ -21,11 +21,14 @@
 	.site-content-my {
 		padding: 0 50px;
 	}
+	.notindex-content-my {
+		padding-top: 20px;
+	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	.site-content-my {
-		padding: 100px;
+		padding: 0 100px;
 	}
 }
 
