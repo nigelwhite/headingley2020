@@ -11,3 +11,8 @@
 .panel-my {
 	margin-top: 20px;
 }
+
+.panel-title-my {
+	padding-left: 20px;
+	border-radius: 4px;
+}
