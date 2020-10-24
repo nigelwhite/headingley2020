@@ -13,6 +13,7 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="js/uikit.min.js"></script>
+		<script defer type="text/javascript" src="please.js"></script>
 	</head>
 	<body>
 		<div
@@ -69,7 +70,12 @@
 						administrators by giving clear instructions, below.
 					</p>
 					<p>See our Privacy Policy for what we do with the data.</p>
-					<form class="uk-form" action="/action_page.php">
+					<form
+						name="please"
+						id="please"
+						class="uk-form"
+						action="/action_page.php"
+					>
 						<!-- My details -->
 						<div class="uk-panel uk-panel-box panel-my">
 							<h4 class="uk-panel-title">My details</h4>
@@ -82,6 +88,7 @@
 										placeholder="First name"
 										id="fname"
 										name="fname"
+										onfocusout="fnameCheck()"
 									/>
 								</div>
 								<div class="uk-width-medium-1-3 margin-top-my">
@@ -170,10 +177,10 @@
 									</div>
 								</div>
 
-								<div class="uk-width-large-2-3">
+								<div class="uk-width-large-2-3 margin-top-my">
 									<textarea
 										name="chatDetails"
-										class="uk-width-1-1 margin-top-my"
+										class="uk-width-1-1"
 										id="chatDetails"
 										cols="30"
 										rows="10"
@@ -182,6 +189,10 @@
 								</div>
 							</div>
 						</div>
+						<div
+							id="error"
+							class="uk-alert uk-alert-danger alert-my"
+						></div>
 						<input type="submit" value="Submit" />
 						<input type="reset" />
 					</form>
@@ -208,4 +219,5 @@
 			</div>
 		</div>
 	</body>
+	>
 </html>
