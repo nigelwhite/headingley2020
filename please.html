@@ -89,6 +89,7 @@
 										id="fname"
 										name="fname"
 										onfocusout="fnameCheck()"
+										required
 									/>
 								</div>
 								<div class="uk-width-medium-1-3 margin-top-my">
@@ -98,6 +99,7 @@
 										placeholder="Last name"
 										id="lname"
 										name="lname"
+										required
 									/>
 								</div>
 								<div class="uk-width-medium-1-3 margin-top-my">
@@ -106,7 +108,8 @@
 										class="uk-width-1-1"
 										id="email"
 										name="email"
-										placeholder="Email"
+										placeholder="Current Email"
+										required
 									/>
 								</div>
 							</div>
@@ -130,7 +133,7 @@
 									>
 										<input
 											type="radio"
-											id="subscribeMe"
+											id="subscribeMeChat"
 											name="chatAction"
 											value="subscribe me"
 										/>
@@ -141,7 +144,7 @@
 
 										<input
 											type="radio"
-											id="unsubscribeMe"
+											id="unsubscribeMeChat"
 											name="chatAction"
 											value="unsubscribe me"
 										/>
@@ -151,7 +154,7 @@
 										<br />
 										<input
 											type="radio"
-											id="changeEmail"
+											id="changeEmailChat"
 											name="chatAction"
 											value="change email"
 										/>
@@ -161,14 +164,14 @@
 										<br />
 										<input
 											type="radio"
-											id="other"
+											id="otherChat"
 											name="chatAction"
 											value="other"
 										/>
 										<label for="other">other</label><br />
 										<input
 											type="radio"
-											id="none"
+											id="noneChat"
 											name="chatAction"
 											value="no action"
 											checked="checked"
