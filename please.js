@@ -2,9 +2,12 @@ const form = document.getElementById('please');
 const errorElement = document.getElementById('error');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
+const email = document.getElementById('email');
+const nowMail = document.getElementById('nowMail');
+const oldEmail = document.getElementById('oldEmail');
 const otherChat = document.getElementById('chatDetails');
 
-// conditional details questions
+// chat action radio buttons
 
 document.forms.please.chatAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
@@ -14,10 +17,17 @@ document.forms.please.chatAction.forEach((radio) => {
 		} else {
 			otherChat.style.display = 'none';
 		}
+		console.log(document.forms.please.chatAction.value);
 	});
 });
 
-// validate
+// chat action echo current email
+
+email.onblur = function () {
+	nowMail.value = this.value;
+};
+
+// validate the form
 form.addEventListener('submit', (e) => {
 	let messages = [];
 	if (fname.value === '' || fname.value == null) {
