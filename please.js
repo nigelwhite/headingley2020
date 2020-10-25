@@ -3,10 +3,12 @@ const errorElement = document.getElementById('error');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
+const oldEmail = document.getElementById('oldEmail');
 const nowMailChat = document.getElementById('nowMailChat');
 const oldEmailChat = document.getElementById('oldEmailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
+const chatAction = document.getElementById('');
 
 // chat action radio buttons
 
@@ -21,6 +23,7 @@ document.forms.please.chatAction.forEach((radio) => {
 		) {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'block';
+			old;
 		} else {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
@@ -29,10 +32,21 @@ document.forms.please.chatAction.forEach((radio) => {
 	});
 });
 
+// display oldEmail in top section if any "change email" radio is checked
+if ($('input[name=chatAction]:changeEmailChat').checked) {
+	oldEmail.style.display = 'block';
+} else {
+	oldEmail.style.display = 'none';
+}
+
 // chat action echo current email
 
 email.onblur = function () {
 	nowMailChat.value = this.value;
+};
+
+oldEmail.onblur = function () {
+	oldEmailChat.value = this.value;
 };
 
 // validate the form
