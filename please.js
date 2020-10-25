@@ -8,7 +8,6 @@ const nowMailChat = document.getElementById('nowMailChat');
 const oldEmailChat = document.getElementById('oldEmailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
-const chatAction = document.getElementById('');
 
 // chat action radio buttons
 
@@ -19,7 +18,7 @@ document.forms.please.chatAction.forEach((radio) => {
 			chatDetails.style.display = 'block';
 			chatEmails.style.display = 'none';
 		} else if (
-			document.forms.please.chatAction.value === 'change email Chat'
+			document.forms.please.chatAction.value === 'change email Chat';
 		) {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'block';
@@ -33,7 +32,7 @@ document.forms.please.chatAction.forEach((radio) => {
 });
 
 // display oldEmail in top section if any "change email" radio is checked
-if ($('input[name=chatAction]:changeEmailChat').checked) {
+if (document.forms.please.chatAction.value === 'change email Chat') {
 	oldEmail.style.display = 'block';
 } else {
 	oldEmail.style.display = 'none';
