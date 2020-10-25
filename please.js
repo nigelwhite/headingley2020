@@ -61,3 +61,7 @@ form.addEventListener('submit', (e) => {
 		errorElement.innerText += messages.join(', ');
 	}
 });
+
+form.addEventListener('reset', (e) => {
+	error.style.display = 'none';
+});
