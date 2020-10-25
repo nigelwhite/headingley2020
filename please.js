@@ -6,6 +6,7 @@ const email = document.getElementById('email');
 const nowMail = document.getElementById('nowMail');
 const oldEmail = document.getElementById('oldEmail');
 const otherChat = document.getElementById('chatDetails');
+const chatEmails = document.getElementById('chatEmails');
 
 // chat action radio buttons
 
@@ -14,8 +15,13 @@ document.forms.please.chatAction.forEach((radio) => {
 		// console.log(`${document.forms.please.chatAction.value}`);
 		if (document.forms.please.chatAction.value === 'other') {
 			otherChat.style.display = 'block';
+			chatEmails.style.display = 'none';
+		} else if (document.forms.please.chatAction.value === 'change email') {
+			otherChat.style.display = 'none';
+			chatEmails.style.display = 'block';
 		} else {
 			otherChat.style.display = 'none';
+			chatEmails.style.display = 'none';
 		}
 		console.log(document.forms.please.chatAction.value);
 	});

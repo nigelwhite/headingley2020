@@ -21,6 +21,7 @@
 	display: none;
 }
 
-#chatDetails {
+#chatDetails,
+#chatEmails {
 	display: none;
 }
