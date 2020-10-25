@@ -3,9 +3,9 @@ const errorElement = document.getElementById('error');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
-const nowMail = document.getElementById('nowMail');
-const oldEmail = document.getElementById('oldEmail');
-const otherChat = document.getElementById('chatDetails');
+const nowMailChat = document.getElementById('nowMailChat');
+const oldEmailChat = document.getElementById('oldEmailChat');
+const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
 
 // chat action radio buttons
@@ -13,14 +13,16 @@ const chatEmails = document.getElementById('chatEmails');
 document.forms.please.chatAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
 		// console.log(`${document.forms.please.chatAction.value}`);
-		if (document.forms.please.chatAction.value === 'other') {
-			otherChat.style.display = 'block';
+		if (document.forms.please.chatAction.value === 'other Chat') {
+			chatDetails.style.display = 'block';
 			chatEmails.style.display = 'none';
-		} else if (document.forms.please.chatAction.value === 'change email') {
-			otherChat.style.display = 'none';
+		} else if (
+			document.forms.please.chatAction.value === 'change email Chat'
+		) {
+			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'block';
 		} else {
-			otherChat.style.display = 'none';
+			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
 		}
 		console.log(document.forms.please.chatAction.value);
@@ -30,7 +32,7 @@ document.forms.please.chatAction.forEach((radio) => {
 // chat action echo current email
 
 email.onblur = function () {
-	nowMail.value = this.value;
+	nowMailChat.value = this.value;
 };
 
 // validate the form
