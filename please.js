@@ -75,17 +75,13 @@ form.addEventListener('submit', (e) => {
 	let messages = [];
 	if (fname.value === '' || fname.value == null) {
 		messages.push('First name is required');
-	}
-
-	if (fname.value.length <= 1) {
+	} else if (fname.value.length <= 1) {
 		messages.push('First name must be more than 1 character');
 	}
 
 	if (lname.value === '' || lname.value == null) {
 		messages.push('Last name is required');
-	}
-
-	if (lname.value.length <= 4) {
+	} else if (lname.value.length <= 4) {
 		messages.push('Last name must be more than 4 characters');
 	}
 
