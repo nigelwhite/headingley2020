@@ -1,3 +1,19 @@
+<?php
+
+if(!empty($_POST['fname'])){
+print_r($_POST);
+echo "<br />";
+// sanitise
+$fname = htmlentities($_POST['fname']);
+echo $fname;
+$lname = htmlentities($_POST['lname']);
+echo $lname;
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -76,7 +92,8 @@
 						name="please"
 						id="please"
 						class="uk-form"
-						action="/action_page.php"
+						method="POST"
+						action="<?php echo $_SERVER['PHP_SELF']; ?>"
 					>
 						<!-- My details -->
 						<div class="uk-panel uk-panel-box panel-my">
@@ -272,11 +289,10 @@
 							id="error"
 							class="uk-alert uk-alert-danger alert-my"
 						></div>
-						<input type="submit" value="Submit" />
-						<button type="reset">Reset form</button>
-						<button class="uk-button" type="button" id="test">
-							Test
-						</button>
+						<!-- <input class="uk-button uk-button-primary" type="submit" value="Submit" name="submit">Send</button> -->
+						<button class="uk-button uk-button-primary" type="submit" value="Submit" name="submit">Send</button>
+						<button class="uk-button uk-button-primary" type="reset">Reset form</button>
+						<button class="uk-button uk-button-primary" type="button" id="test">Test</button>
 					</form>
 				</div>
 			</main>
