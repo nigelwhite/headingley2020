@@ -4,38 +4,60 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
 const oldEmail = document.getElementById('oldEmail');
-const nowMailChat = document.getElementById('nowMailChat');
 const oldEmailChat = document.getElementById('oldEmailChat');
+const oldEmailDiv = document.getElementById('oldEmailDiv');
+const nowMailChat = document.getElementById('nowMailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
+var triggerOldEmailDisplay = 'dont';
 
 // chat action radio buttons
 
 document.forms.please.chatAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
 		// console.log(`${document.forms.please.chatAction.value}`);
-		if (document.forms.please.chatAction.value === 'other Chat') {
-			chatDetails.style.display = 'block';
+		if (document.forms.please.chatAction.value === 'subscribe Chat') {
+			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
 		} else if (
-			document.forms.please.chatAction.value === 'change email Chat';
+			document.forms.please.chatAction.value === 'unsubscribe Chat'
+		) {
+			chatDetails.style.display = 'none';
+			chatEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.chatAction.value === 'change email Chat'
 		) {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'block';
-			old;
+			triggerOldEmailDisplay = 'doso';
+			oldEmailDisplay();
+		} else if (document.forms.please.chatAction.value === 'other Chat') {
+			chatDetails.style.display = 'block';
+			chatEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
 		} else {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
 		}
 		console.log(document.forms.please.chatAction.value);
+		console.log(triggerOldEmailDisplay);
 	});
 });
 
-// display oldEmail in top section if any "change email" radio is checked
-if (document.forms.please.chatAction.value === 'change email Chat') {
-	oldEmail.style.display = 'block';
-} else {
-	oldEmail.style.display = 'none';
+// display oldEmail in top section if any "change my email" radio is checked
+function oldEmailDisplay() {
+	if (triggerOldEmailDisplay === 'doso') {
+		oldEmailDiv.style.display = 'block';
+	} else {
+		oldEmailDiv.style.display = 'none';
+	}
 }
 
 // chat action echo current email
@@ -77,4 +99,12 @@ form.addEventListener('submit', (e) => {
 
 form.addEventListener('reset', (e) => {
 	error.style.display = 'none';
+	oldEmailDiv.style.display = 'none';
+	chatDetails.style.display = 'none';
+	chatEmails.style.display = 'none';
 });
+
+// test
+document.getElementById('test').onclick = function () {
+	alert(changeChatEmail);
+};
