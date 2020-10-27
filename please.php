@@ -1,5 +1,7 @@
 <?php
 
+$msg = '';
+
 if(!empty($_POST['fname'])){
 print_r($_POST);
 echo "<br />";
@@ -8,6 +10,16 @@ $fname = htmlentities($_POST['fname']);
 echo $fname;
 $lname = htmlentities($_POST['lname']);
 echo $lname;
+$email = htmlentities($_POST['email']);
+echo $email;
+$oldEmail = htmlentities($_POST['oldEmail']);
+echo $oldEmail;
+$chatAction = ($_POST['chatAction']);
+echo $chatAction;
+$chatDetails = htmlentities($_POST['chatDetails']);
+echo $chatDetails;
+// show success message
+$msg = "Thanks, that's great";
 }
 
 
@@ -83,7 +95,7 @@ echo $lname;
 					</p>
 					<p>
 						If you are already subscribed, you can manage your
-						settings yourself. However, if that is too daunting, you
+						settings yourself. If that is too daunting, you
 						can request a volunteer to do it for you below. Please
 						help our administrators by giving clear instructions.
 					</p>
@@ -289,7 +301,11 @@ echo $lname;
 							id="error"
 							class="uk-alert uk-alert-danger alert-my"
 						></div>
-						<!-- <input class="uk-button uk-button-primary" type="submit" value="Submit" name="submit">Send</button> -->
+						<?php if($msg != ''): ?>
+						<div class="uk-alert uk-alert-success">
+							<?php echo $msg; ?>
+						</div>
+						<?php endif; ?>
 						<button class="uk-button uk-button-primary" type="submit" value="Submit" name="submit">Send</button>
 						<button class="uk-button uk-button-primary" type="reset">Reset form</button>
 						<button class="uk-button uk-button-primary" type="button" id="test">Test</button>
