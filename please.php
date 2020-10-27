@@ -2,6 +2,22 @@
 
 $msg = '';
 
+// if honeypot not empty, show a success alert and exit
+	// if honeypot empty, process POST data
+		// if chatAction not 'none'
+			// if chatAction = subscribe or unsubscribe, send simple email
+			// if chatAction = change email address, send old address
+			// if chatAction = other, send details
+		// if triangleActio not 'none'
+			// triangle email
+		// if activistsAction not 'none'
+			// activists email
+		// show success alert
+		
+		
+
+
+
 if(isset($_POST['fname'])){
 // print_r($_POST);
 // echo "<br />";

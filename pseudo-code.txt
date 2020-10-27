@@ -1,0 +1,34 @@
+ONE LIST
+if !chatAction === none
+
+$toEmail = 'chat-caretaker@headingley.org'; // destination of email
+$subject = 'Request to change Chat settings from '.$name;
+$body = '<h2>Request to change Chat settings</h4>;
+    <p>Resident's name: '.$name.'</p>
+    <p>Resident's email: '.$email.'</p>
+    <p>Please: '$chatAction.'</p>
+    // if chatAction = change address
+        <p>Please change my email address from '.$oldEmail.'.to '.$email'</p>
+    // if chatAction = other
+        <p>'.$details.'</p>
+    <p>Details: '.$details.'</p>';
+
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-Type:text/html:charset=UTF-8" . "\r\n";
+$headers .= "From: " .$name. "<".$email.">". "\r\n";
+
+
+
+if(mail($toEmail, $subject, $body, $headers)){
+    show sucess alert
+} else {
+    show failure alert
+
+
+subscribe me
+unsubscribe me
+change address + old address
+other + details
+
+
+
