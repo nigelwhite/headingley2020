@@ -101,6 +101,6 @@ form.addEventListener('reset', (e) => {
 });
 
 // test
-document.getElementById('test').onclick = function () {
-	alert(changeChatEmail);
-};
+// document.getElementById('test').onclick = function () {
+// 	alert(changeChatEmail);
+// };
