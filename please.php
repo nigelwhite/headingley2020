@@ -2,24 +2,29 @@
 
 $msg = '';
 
-if(!empty($_POST['fname'])){
-print_r($_POST);
-echo "<br />";
+if(isset($_POST['fname'])){
+// print_r($_POST);
+// echo "<br />";
 // sanitise
-$fname = htmlentities($_POST['fname']);
-echo $fname;
-$lname = htmlentities($_POST['lname']);
-echo $lname;
-$email = htmlentities($_POST['email']);
+$fname = htmlspecialchars($_POST['fname']);
+$lname = htmlspecialchars($_POST['lname']);
+echo $fname.' '.$lname;
+echo "<br />";
+$email = htmlspecialchars($_POST['email']);
 echo $email;
-$oldEmail = htmlentities($_POST['oldEmail']);
+echo "<br />";
+$oldEmail = htmlspecialchars($_POST['oldEmail']);
 echo $oldEmail;
-$chatAction = ($_POST['chatAction']);
+echo "<br />";
+// chat stuff
+$chatAction = htmlspecialchars($_POST['chatAction']);
 echo $chatAction;
-$chatDetails = htmlentities($_POST['chatDetails']);
+echo "<br />";
+$chatDetails = htmlspecialchars($_POST['chatDetails']);
 echo $chatDetails;
 // show success message
-$msg = "Thanks, that's great";
+$msg = 'Thanks a bunch';
+
 }
 
 
