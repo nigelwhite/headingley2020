@@ -39,7 +39,7 @@ echo "<br />";
 $chatDetails = htmlspecialchars($_POST['chatDetails']);
 echo $chatDetails;
 // show success message
-$msg = 'Thanks a bunch';
+// $msg = 'Thanks a bunch';
 
 }
 
@@ -322,11 +322,14 @@ $msg = 'Thanks a bunch';
 							id="error"
 							class="uk-alert uk-alert-danger alert-my missing"
 						></div>
-						<?php if($msg != ''): ?>
+						<div id="success" class="uk-alert uk-alert-success">
+							You did good
+						</div>
+						<!-- <?php if($msg != ''): ?>
 						<div class="uk-alert uk-alert-success">
 							<?php echo $msg; ?>
 						</div>
-						<?php endif; ?>
+						<?php endif; ?> -->
 						<button class="uk-button uk-button-primary" type="submit" value="Submit" name="submit">Send</button>
 						<button class="uk-button uk-button-primary" type="reset">Reset form</button>
 						<button class="uk-button uk-button-primary" type="button" id="test">Test</button>

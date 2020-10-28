@@ -26,7 +26,8 @@
 
 #chatDetails,
 #chatEmails,
-#oldEmailDiv {
+#oldEmailDiv,
+#success {
 	display: none;
 }
 

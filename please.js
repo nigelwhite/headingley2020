@@ -1,5 +1,6 @@
 const form = document.getElementById('please');
 const errorElement = document.getElementById('error');
+const successElement = document.getElementById('success');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
@@ -73,6 +74,7 @@ oldEmail.onblur = function () {
 // validate the form
 form.addEventListener('submit', (e) => {
 	let messages = [];
+	// first name alerts
 	if (fname.value === '' || fname.value == null) {
 		messages.push('First name is required');
 		fname.classList.add('missing');
@@ -81,6 +83,7 @@ form.addEventListener('submit', (e) => {
 		fname.classList.add('missing');
 	}
 
+	// last name alerts
 	if (lname.value === '' || lname.value == null) {
 		messages.push('Last name is required');
 		lname.classList.add('missing');
@@ -89,6 +92,7 @@ form.addEventListener('submit', (e) => {
 		lname.classList.add('missing');
 	}
 
+	// Chat other with no details alert
 	if (
 		document.getElementById('otherChat').checked &&
 		chatDetails.value === ''
@@ -99,6 +103,7 @@ form.addEventListener('submit', (e) => {
 		chatDetails.classList.add('missing');
 	}
 
+	// Chat change email with no old email alert
 	if (
 		document.getElementById('changeEmailChat').checked &&
 		oldEmail.value === ''
@@ -107,11 +112,19 @@ form.addEventListener('submit', (e) => {
 		oldEmail.classList.add('missing');
 	}
 
+	// if there are any errors, show the error block with the error messages in it
 	if (messages.length > 0) {
 		e.preventDefault();
 		error.style.display = 'block';
 		errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
 		errorElement.innerText += messages.join(', ');
+	}
+
+	if (messages.length == 0) {
+		successElement.style.display = 'block';
+		setTimeout(function () {
+			successElement.style.display = 'none';
+		}, 5000);
 	}
 });
 
