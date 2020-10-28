@@ -38,8 +38,7 @@ echo $chatAction;
 echo "<br />";
 $chatDetails = htmlspecialchars($_POST['chatDetails']);
 echo $chatDetails;
-// show success message
-// $msg = 'Thanks a bunch';
+
 
 }
 

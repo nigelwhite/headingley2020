@@ -12,6 +12,7 @@ const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
 var triggerOldEmailDisplay = 'dont';
 
+// Validation before POST
 function validateForm() {
 	let messages = [];
 
@@ -59,6 +60,10 @@ function validateForm() {
 		errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
 		errorElement.innerText += messages.join(', ');
 		return false;
+	}
+
+	if (messages.length == 0) {
+		successElement.style.display = 'block';
 	}
 }
 
