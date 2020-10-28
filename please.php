@@ -271,7 +271,7 @@ $msg = 'Thanks a bunch';
 										id="chatDetails"
 										cols="30"
 										rows="5"
-										placeholder="Details"
+										placeholder="Details of what you want us to do in your Chat settings"
 									></textarea>
 									<div id="chatEmails">
 										<fieldset

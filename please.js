@@ -4,6 +4,8 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
 const oldEmail = document.getElementById('oldEmail');
+var chatAction = document.querySelector('input[name="chatAction"]:checked')
+	.value;
 const oldEmailChat = document.getElementById('oldEmailChat');
 const oldEmailDiv = document.getElementById('oldEmailDiv');
 const nowMailChat = document.getElementById('nowMailChat');
@@ -75,14 +77,28 @@ form.addEventListener('submit', (e) => {
 	let messages = [];
 	if (fname.value === '' || fname.value == null) {
 		messages.push('First name is required');
+		fname.classList.add('missing');
 	} else if (fname.value.length <= 1) {
 		messages.push('First name must be more than 1 character');
+		fname.classList.add('missing');
 	}
 
 	if (lname.value === '' || lname.value == null) {
 		messages.push('Last name is required');
+		lname.classList.add('missing');
 	} else if (lname.value.length <= 4) {
 		messages.push('Last name must be more than 4 characters');
+		lname.classList.add('missing');
+	}
+
+	if (
+		document.getElementById('otherChat').checked &&
+		chatDetails.value === ''
+	) {
+		messages.push(
+			'What other action do you want us to take in your Chat settings?'
+		);
+		chatDetails.classList.add('missing');
 	}
 
 	if (messages.length > 0) {
