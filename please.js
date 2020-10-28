@@ -12,6 +12,56 @@ const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
 var triggerOldEmailDisplay = 'dont';
 
+function validateForm() {
+	let messages = [];
+
+	// first name alerts
+	if (fname.value === '' || fname.value == null) {
+		messages.push('First name is required');
+		fname.classList.add('missing');
+	} else if (fname.value.length <= 1) {
+		messages.push('First name must be more than 1 character');
+		fname.classList.add('missing');
+	}
+
+	// last name alerts
+	if (lname.value === '' || lname.value == null) {
+		messages.push('Last name is required');
+		lname.classList.add('missing');
+	} else if (lname.value.length <= 4) {
+		messages.push('Last name must be more than 4 characters');
+		lname.classList.add('missing');
+	}
+
+	// Chat other with no details alert
+	if (
+		document.getElementById('otherChat').checked &&
+		chatDetails.value === ''
+	) {
+		messages.push(
+			'What other action do you want us to take in your Chat settings?'
+		);
+		chatDetails.classList.add('missing');
+	}
+
+	// Chat change email with no old email alert
+	if (
+		document.getElementById('changeEmailChat').checked &&
+		oldEmail.value === ''
+	) {
+		messages.push('Please fill in your old email');
+		oldEmail.classList.add('missing');
+	}
+
+	// if there are any errors, show the error block with the error messages in it
+	if (messages.length > 0) {
+		error.style.display = 'block';
+		errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
+		errorElement.innerText += messages.join(', ');
+		return false;
+	}
+}
+
 // chat action radio buttons
 
 document.forms.please.chatAction.forEach((radio) => {
@@ -72,61 +122,61 @@ oldEmail.onblur = function () {
 };
 
 // validate the form
-form.addEventListener('submit', (e) => {
-	let messages = [];
-	// first name alerts
-	if (fname.value === '' || fname.value == null) {
-		messages.push('First name is required');
-		fname.classList.add('missing');
-	} else if (fname.value.length <= 1) {
-		messages.push('First name must be more than 1 character');
-		fname.classList.add('missing');
-	}
+// form.addEventListener('submit', (e) => {
+// let messages = [];
+// // first name alerts
+// if (fname.value === '' || fname.value == null) {
+// 	messages.push('First name is required');
+// 	fname.classList.add('missing');
+// } else if (fname.value.length <= 1) {
+// 	messages.push('First name must be more than 1 character');
+// 	fname.classList.add('missing');
+// }
 
-	// last name alerts
-	if (lname.value === '' || lname.value == null) {
-		messages.push('Last name is required');
-		lname.classList.add('missing');
-	} else if (lname.value.length <= 4) {
-		messages.push('Last name must be more than 4 characters');
-		lname.classList.add('missing');
-	}
+// // last name alerts
+// if (lname.value === '' || lname.value == null) {
+// 	messages.push('Last name is required');
+// 	lname.classList.add('missing');
+// } else if (lname.value.length <= 4) {
+// 	messages.push('Last name must be more than 4 characters');
+// 	lname.classList.add('missing');
+// }
 
-	// Chat other with no details alert
-	if (
-		document.getElementById('otherChat').checked &&
-		chatDetails.value === ''
-	) {
-		messages.push(
-			'What other action do you want us to take in your Chat settings?'
-		);
-		chatDetails.classList.add('missing');
-	}
+// // Chat other with no details alert
+// if (
+// 	document.getElementById('otherChat').checked &&
+// 	chatDetails.value === ''
+// ) {
+// 	messages.push(
+// 		'What other action do you want us to take in your Chat settings?'
+// 	);
+// 	chatDetails.classList.add('missing');
+// }
 
-	// Chat change email with no old email alert
-	if (
-		document.getElementById('changeEmailChat').checked &&
-		oldEmail.value === ''
-	) {
-		messages.push('Please fill in your old email');
-		oldEmail.classList.add('missing');
-	}
+// // Chat change email with no old email alert
+// if (
+// 	document.getElementById('changeEmailChat').checked &&
+// 	oldEmail.value === ''
+// ) {
+// 	messages.push('Please fill in your old email');
+// 	oldEmail.classList.add('missing');
+// }
 
-	// if there are any errors, show the error block with the error messages in it
-	if (messages.length > 0) {
-		e.preventDefault();
-		error.style.display = 'block';
-		errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
-		errorElement.innerText += messages.join(', ');
-	}
+// // if there are any errors, show the error block with the error messages in it
+// if (messages.length > 0) {
+// 	e.preventDefault();
+// 	error.style.display = 'block';
+// 	errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
+// 	errorElement.innerText += messages.join(', ');
+// }
 
-	if (messages.length == 0) {
-		successElement.style.display = 'block';
-		setTimeout(function () {
-			successElement.style.display = 'none';
-		}, 5000);
-	}
-});
+// 	if (messages.length == 0) {
+// 		successElement.style.display = 'block';
+// 		setTimeout(function () {
+// 			successElement.style.display = 'none';
+// 		}, 5000);
+// 	}
+// });
 
 form.addEventListener('reset', (e) => {
 	error.style.display = 'none';
