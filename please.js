@@ -4,8 +4,6 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
 const oldEmail = document.getElementById('oldEmail');
-var chatAction = document.querySelector('input[name="chatAction"]:checked')
-	.value;
 const oldEmailChat = document.getElementById('oldEmailChat');
 const oldEmailDiv = document.getElementById('oldEmailDiv');
 const nowMailChat = document.getElementById('nowMailChat');
@@ -99,6 +97,14 @@ form.addEventListener('submit', (e) => {
 			'What other action do you want us to take in your Chat settings?'
 		);
 		chatDetails.classList.add('missing');
+	}
+
+	if (
+		document.getElementById('changeEmailChat').checked &&
+		oldEmail.value === ''
+	) {
+		messages.push('Please fill in your old email');
+		oldEmail.classList.add('missing');
 	}
 
 	if (messages.length > 0) {

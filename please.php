@@ -320,7 +320,7 @@ $msg = 'Thanks a bunch';
 
 						<div
 							id="error"
-							class="uk-alert uk-alert-danger alert-my"
+							class="uk-alert uk-alert-danger alert-my missing"
 						></div>
 						<?php if($msg != ''): ?>
 						<div class="uk-alert uk-alert-success">
