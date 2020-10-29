@@ -75,16 +75,12 @@
 			</footer>
 
 			<!-- Drawer navigation -->
-			<div id="my-id" class="uk-offcanvas">
-				<div class="uk-offcanvas-bar">
-					<ul class="uk-nav uk-nav-offcanvas">
-						<li class="uk-active">
-							<a href="index.html">Welcome</a>
-						</li>
-						<li><a href="about.html">About</a></li>
-					</ul>
-				</div>
-			</div>
+			<script>
+				$(function () {
+					$('#navigation-drawer').load('navigation-drawer.html');
+				});
+			</script>
+			<div id="navigation-drawer"></div>
 		</div>
 	</body>
 </html>
