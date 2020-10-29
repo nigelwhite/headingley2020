@@ -20,39 +20,12 @@
 			class="uk-container uk-padding-remove uk-container-center uk-panel uk-panel-box site-my"
 		>
 			<!-- Top Navigation -->
-			<nav class="uk-navbar">
-				<div class="uk-flex uk-flex-middle uk-flex-space-between">
-					<div>
-						<a href="index.html"
-							><img
-								src="img/logo-nav.png"
-								class="logo-nav-my"
-								alt="people working together"
-						/></a>
-					</div>
-					<div class="navbar-brand-my">
-						<a href="index.html">headingley.org</a>
-					</div>
-					<div>
-						<ul
-							class="uk-navbar-nav uk-hidden-small navbar-my uk-flex uk-flex-middle"
-						>
-							<li>
-								<a href="index.html">Welcome</a>
-							</li>
-							<li class="uk-active">
-								<a href="about.html">About</a>
-							</li>
-						</ul>
-
-						<a
-							href="#my-id"
-							class="uk-navbar-toggle uk-visible-small"
-							data-uk-offcanvas
-						></a>
-					</div>
-				</div>
-			</nav>
+			<script>
+				$(function () {
+					$('#navigation-top').load('navigation-top.html');
+				});
+			</script>
+			<div id="navigation-top"></div>
 
 			<!-- Main section -->
 			<main
