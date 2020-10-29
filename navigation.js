@@ -26,9 +26,10 @@ $(function () {
 // 	$('li.' + index).addClass('uk-active');
 // });
 
-$(function () {
-	$('ul li a').click(function () {
-		$('li').removeClass('uk-active');
-		$(this).addClass('uk-active');
-	});
-});
+// $(function () {
+// 	$('ul li a').click(function () {
+// 		alert('got it');
+// 		$('li').removeClass('uk-active');
+// 		$(this).addClass('uk-active');
+// 	});
+// });

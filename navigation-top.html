@@ -15,13 +15,43 @@
 		<div>
 			<ul
 				class="uk-navbar-nav uk-hidden-small navbar-my uk-flex uk-flex-middle"
+				id="navItems"
 			>
-				<li class="menu"><a href="index.html">Welcome</a></li>
-				<li class="menu">
+				<li class="uk-active"><a href="index.html">Welcome</a></li>
+				<li>
 					<a href="about.html">About</a>
 				</li>
-				<li class="menu"><a href="please.html">Please</a></li>
+				<li><a href="please.html">Please</a></li>
 			</ul>
+			<script type="text/javascript">
+				// $(function () {
+				// 	var current = location.pathname;
+				// 	$('#navItems li a').each(function () {
+				// 		var $this = $(this);
+				// 		// if the current path is like this link, make it active
+				// 		if ($this.attr('href').indexOf(current) !== -1) {
+				// 			$this.parent().addClass('uk-active');
+				// 		}
+				// 	});
+				// });
+
+				// another go
+				// $(document).on('click', 'ul li', function () {
+				// 	$('#navItems li').removeClass('active');
+				// 	$(this).addClass('active');
+				// });
+
+				// and another
+				$(function () {
+					$('#navItems a').click(function () {
+						$(this)
+							.parent()
+							.addClass('uk-active')
+							.siblings()
+							.removeClass('uk-active');
+					});
+				});
+			</script>
 
 			<a
 				href="#my-id"
