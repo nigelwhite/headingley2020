@@ -56,8 +56,8 @@ function validateForm() {
 		);
 	}
 
-	if (!chat === 'no action') {
-		// Chat-specific checks
+	// chat checks
+	if (chat != 'no action') {
 		// Chat other with no details alert
 		if (
 			document.getElementById('otherChat').checked &&
@@ -71,6 +71,50 @@ function validateForm() {
 		// Chat change email with no old email alert
 		else if (
 			document.getElementById('changeEmailChat').checked &&
+			oldEmail.value === ''
+		) {
+			messages.push('Please fill in your old email');
+			oldEmail.classList.add('missing');
+		}
+	}
+
+	// triangle checks
+	if (triangle != 'no action') {
+		// Triangle other with no details alert
+		if (
+			document.getElementById('otherTriangle').checked &&
+			triangleDetails.value === ''
+		) {
+			messages.push(
+				'What other action do you want us to take in your Triangle settings?'
+			);
+			triangleDetails.classList.add('missing');
+		}
+		// Triangle change email with no old email alert
+		else if (
+			document.getElementById('changeEmailTriangle').checked &&
+			oldEmail.value === ''
+		) {
+			messages.push('Please fill in your old email');
+			oldEmail.classList.add('missing');
+		}
+	}
+
+	// Activists checks
+	if (activists != 'no action') {
+		// Activists other with no details alert
+		if (
+			document.getElementById('otherActivists').checked &&
+			activistsDetails.value === ''
+		) {
+			messages.push(
+				'What other action do you want us to take in your Activists settings?'
+			);
+			activistsDetails.classList.add('missing');
+		}
+		// Activists change email with no old email alert
+		else if (
+			document.getElementById('changeEmailActivists').checked &&
 			oldEmail.value === ''
 		) {
 			messages.push('Please fill in your old email');
@@ -293,14 +337,14 @@ form.addEventListener('reset', (e) => {
 // };
 
 // test - WORKS!!
-document.getElementById('test').onclick = function () {
-	var x = document.querySelector('input[name="chatAction"]:checked').value;
-	var y = document.querySelector('input[name="triangleAction"]:checked')
-		.value;
-	var z = document.querySelector('input[name="activistsAction"]:checked')
-		.value;
-	console.log(x + ' ' + y + ' ' + z);
-	if (x === 'no action' && y === 'no action' && z === 'no action') {
-		console.log('nothing');
-	}
-};
+// document.getElementById('test').onclick = function () {
+// 	var x = document.querySelector('input[name="chatAction"]:checked').value;
+// 	var y = document.querySelector('input[name="triangleAction"]:checked')
+// 		.value;
+// 	var z = document.querySelector('input[name="activistsAction"]:checked')
+// 		.value;
+// 	console.log(x + ' ' + y + ' ' + z);
+// 	if (x === 'no action' && y === 'no action' && z === 'no action') {
+// 		console.log('nothing');
+// 	}
+// };
