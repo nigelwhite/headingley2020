@@ -26,6 +26,10 @@
 
 #chatDetails,
 #chatEmails,
+#triangleDetails,
+#triangleEmails,
+#activistsDetails,
+#activistsEmails,
 #oldEmailDiv,
 #success {
 	display: none;

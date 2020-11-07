@@ -111,6 +111,91 @@ document.forms.please.chatAction.forEach((radio) => {
 	});
 });
 
+// triangle action radio button reactions
+document.forms.please.triangleAction.forEach((radio) => {
+	radio.addEventListener('change', () => {
+		if (
+			document.forms.please.triangleAction.value === 'subscribe Triangle'
+		) {
+			triangleDetails.style.display = 'none';
+			triangleEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.triangleAction.value ===
+			'unsubscribe Triangle'
+		) {
+			triangleDetails.style.display = 'none';
+			triangleEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.triangleAction.value ===
+			'change email Triangle'
+		) {
+			triangleDetails.style.display = 'none';
+			triangleEmails.style.display = 'block';
+			triggerOldEmailDisplay = 'doso';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.triangleAction.value === 'other Triangle'
+		) {
+			triangleDetails.style.display = 'block';
+			triangleEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else {
+			triangleDetails.style.display = 'none';
+			triangleEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		}
+	});
+});
+
+// activists action radio button reactions
+document.forms.please.activistsAction.forEach((radio) => {
+	radio.addEventListener('change', () => {
+		if (
+			document.forms.please.activistsAction.value ===
+			'subscribe Activists'
+		) {
+			activistsDetails.style.display = 'none';
+			activistsEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.activistsAction.value ===
+			'unsubscribe Activists'
+		) {
+			activistsDetails.style.display = 'none';
+			activistsEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.activistsAction.value ===
+			'change email Activists'
+		) {
+			activistsDetails.style.display = 'none';
+			activistsEmails.style.display = 'block';
+			triggerOldEmailDisplay = 'doso';
+			oldEmailDisplay();
+		} else if (
+			document.forms.please.activistsAction.value === 'other Activists'
+		) {
+			activistsDetails.style.display = 'block';
+			activistsEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		} else {
+			activistsDetails.style.display = 'none';
+			cactivistsEmails.style.display = 'none';
+			triggerOldEmailDisplay = 'dont';
+			oldEmailDisplay();
+		}
+	});
+});
+
 // display oldEmail in top section if any "change my email" radio is checked
 function oldEmailDisplay() {
 	if (triggerOldEmailDisplay === 'doso') {
