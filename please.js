@@ -10,12 +10,18 @@ const oldEmailDiv = document.getElementById('oldEmailDiv');
 const nowMailChat = document.getElementById('nowMailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
-var chat = document.getElementById('noneChat').checked;
 var triggerOldEmailDisplay = 'dont';
 
 // Validation before POST
 function validateForm() {
 	let messages = [];
+	var chat = document.querySelector('input[name="chatAction"]:checked').value;
+	var triangle = document.querySelector(
+		'input[name="triangleAction"]:checked'
+	).value;
+	var activists = document.querySelector(
+		'input[name="activistsAction"]:checked'
+	).value;
 
 	// first name alerts
 	if (fname.value === '' || fname.value == null) {
@@ -40,7 +46,17 @@ function validateForm() {
 		)
 	) {
 		messages.push('Please enter a valid email');
-	} else if (chat) {
+	} else if (
+		chat === 'no action' &&
+		triangle === 'no action' &&
+		activists === 'no action'
+	) {
+		messages.push(
+			'You have not asked us to change anything! You have said "Take no action" on all 3 networks'
+		);
+	}
+
+	if (!chat === 'no action') {
 		// Chat-specific checks
 		// Chat other with no details alert
 		if (
@@ -189,7 +205,7 @@ document.forms.please.activistsAction.forEach((radio) => {
 			oldEmailDisplay();
 		} else {
 			activistsDetails.style.display = 'none';
-			cactivistsEmails.style.display = 'none';
+			activistsEmails.style.display = 'none';
 			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		}
@@ -229,7 +245,62 @@ form.addEventListener('reset', (e) => {
 	activistsEmails.style.display = 'none';
 });
 
-// test
+// test - always prints to console
 // document.getElementById('test').onclick = function () {
-// 	alert(changeChatEmail);
+// 	if (chat || traingle || activists) {
+// 		console.log('You have not asked us to change anything!');
+// 	}
 // };
+
+// test - never prints to console
+// document.getElementById('test').onclick = function () {
+// 	if (!chat || !triangle || !activists) {
+// 		console.log('You have not asked us to change anything!');
+// 	}
+// };
+
+// test - always prints to console
+// document.getElementById('test').onclick = function () {
+// 	if (chat && triangle && activists) {
+// 		console.log('You have not asked us to change anything!');
+// 	}
+// };
+
+// test - never prints to console
+// document.getElementById('test').onclick = function () {
+// 	if (!chat && !triangle && !activists) {
+// 		console.log('You have not asked us to change anything!');
+// 	}
+// };
+
+// test - always prints to console
+// document.getElementById('test').onclick = function () {
+// 	if (chat == true && triangle == true && activists == true) {
+// 		console.log('You have not asked us to change anything!');
+// 	}
+// };
+
+// // test - always prints 'nothing' to console
+// document.getElementById('test').onclick = function () {
+// 	console.log(chat + ' ' + triangle + ' ' + activists);
+// 	if (
+// 		chat === 'no action' &&
+// 		triangle === 'no action' &&
+// 		activists === 'no action'
+// 	) {
+// 		console.log('nothing');
+// 	}
+// };
+
+// test - WORKS!!
+document.getElementById('test').onclick = function () {
+	var x = document.querySelector('input[name="chatAction"]:checked').value;
+	var y = document.querySelector('input[name="triangleAction"]:checked')
+		.value;
+	var z = document.querySelector('input[name="activistsAction"]:checked')
+		.value;
+	console.log(x + ' ' + y + ' ' + z);
+	if (x === 'no action' && y === 'no action' && z === 'no action') {
+		console.log('nothing');
+	}
+};
