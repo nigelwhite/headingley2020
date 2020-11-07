@@ -23,19 +23,25 @@ function validateForm() {
 	} else if (fname.value.length <= 1) {
 		messages.push('First name must be more than 1 character');
 		fname.classList.add('missing');
-	}
-
-	// last name alerts
-	if (lname.value === '' || lname.value == null) {
+	} else if (
+		// last name alerts
+		lname.value === '' ||
+		lname.value == null
+	) {
 		messages.push('Last name is required');
 		lname.classList.add('missing');
 	} else if (lname.value.length <= 4) {
 		messages.push('Last name must be more than 4 characters');
 		lname.classList.add('missing');
+	} else if (
+		!email.value.match(
+			/^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i
+		)
+	) {
+		messages.push('Please enter a valid email');
 	}
-
 	// Chat other with no details alert
-	if (
+	else if (
 		document.getElementById('otherChat').checked &&
 		chatDetails.value === ''
 	) {
@@ -44,9 +50,8 @@ function validateForm() {
 		);
 		chatDetails.classList.add('missing');
 	}
-
 	// Chat change email with no old email alert
-	if (
+	else if (
 		document.getElementById('changeEmailChat').checked &&
 		oldEmail.value === ''
 	) {
@@ -62,16 +67,14 @@ function validateForm() {
 		return false;
 	}
 
-	if (messages.length == 0) {
-		successElement.style.display = 'block';
-	}
+	// if (messages.length == 0) {
+	// 	successElement.style.display = 'block';
+	// }
 }
 
-// chat action radio buttons
-
+// chat action radio button reactions
 document.forms.please.chatAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
-		// console.log(`${document.forms.please.chatAction.value}`);
 		if (document.forms.please.chatAction.value === 'subscribe Chat') {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
@@ -102,8 +105,6 @@ document.forms.please.chatAction.forEach((radio) => {
 			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		}
-		console.log(document.forms.please.chatAction.value);
-		console.log(triggerOldEmailDisplay);
 	});
 });
 
@@ -117,72 +118,14 @@ function oldEmailDisplay() {
 }
 
 // chat action echo current email
-
 email.onblur = function () {
 	nowMailChat.value = this.value;
 };
-
 oldEmail.onblur = function () {
 	oldEmailChat.value = this.value;
 };
 
-// validate the form
-// form.addEventListener('submit', (e) => {
-// let messages = [];
-// // first name alerts
-// if (fname.value === '' || fname.value == null) {
-// 	messages.push('First name is required');
-// 	fname.classList.add('missing');
-// } else if (fname.value.length <= 1) {
-// 	messages.push('First name must be more than 1 character');
-// 	fname.classList.add('missing');
-// }
-
-// // last name alerts
-// if (lname.value === '' || lname.value == null) {
-// 	messages.push('Last name is required');
-// 	lname.classList.add('missing');
-// } else if (lname.value.length <= 4) {
-// 	messages.push('Last name must be more than 4 characters');
-// 	lname.classList.add('missing');
-// }
-
-// // Chat other with no details alert
-// if (
-// 	document.getElementById('otherChat').checked &&
-// 	chatDetails.value === ''
-// ) {
-// 	messages.push(
-// 		'What other action do you want us to take in your Chat settings?'
-// 	);
-// 	chatDetails.classList.add('missing');
-// }
-
-// // Chat change email with no old email alert
-// if (
-// 	document.getElementById('changeEmailChat').checked &&
-// 	oldEmail.value === ''
-// ) {
-// 	messages.push('Please fill in your old email');
-// 	oldEmail.classList.add('missing');
-// }
-
-// // if there are any errors, show the error block with the error messages in it
-// if (messages.length > 0) {
-// 	e.preventDefault();
-// 	error.style.display = 'block';
-// 	errorElement.innerHTML = '<div id="idChild"> Ooops! <br /></div>';
-// 	errorElement.innerText += messages.join(', ');
-// }
-
-// 	if (messages.length == 0) {
-// 		successElement.style.display = 'block';
-// 		setTimeout(function () {
-// 			successElement.style.display = 'none';
-// 		}, 5000);
-// 	}
-// });
-
+// reset form
 form.addEventListener('reset', (e) => {
 	error.style.display = 'none';
 	oldEmailDiv.style.display = 'none';
