@@ -10,6 +10,7 @@ const oldEmailDiv = document.getElementById('oldEmailDiv');
 const nowMailChat = document.getElementById('nowMailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
+var chat = document.getElementById('noneChat').checked;
 var triggerOldEmailDisplay = 'dont';
 
 // Validation before POST
@@ -39,24 +40,26 @@ function validateForm() {
 		)
 	) {
 		messages.push('Please enter a valid email');
-	}
-	// Chat other with no details alert
-	else if (
-		document.getElementById('otherChat').checked &&
-		chatDetails.value === ''
-	) {
-		messages.push(
-			'What other action do you want us to take in your Chat settings?'
-		);
-		chatDetails.classList.add('missing');
-	}
-	// Chat change email with no old email alert
-	else if (
-		document.getElementById('changeEmailChat').checked &&
-		oldEmail.value === ''
-	) {
-		messages.push('Please fill in your old email');
-		oldEmail.classList.add('missing');
+	} else if (chat) {
+		// Chat-specific checks
+		// Chat other with no details alert
+		if (
+			document.getElementById('otherChat').checked &&
+			chatDetails.value === ''
+		) {
+			messages.push(
+				'What other action do you want us to take in your Chat settings?'
+			);
+			chatDetails.classList.add('missing');
+		}
+		// Chat change email with no old email alert
+		else if (
+			document.getElementById('changeEmailChat').checked &&
+			oldEmail.value === ''
+		) {
+			messages.push('Please fill in your old email');
+			oldEmail.classList.add('missing');
+		}
 	}
 
 	// if there are any errors, show the error block with the error messages in it
