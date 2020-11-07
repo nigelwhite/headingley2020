@@ -205,12 +205,16 @@ function oldEmailDisplay() {
 	}
 }
 
-// chat action echo current email
+// echo emails from top into each list section
 email.onblur = function () {
 	nowMailChat.value = this.value;
+	nowMailTriangle.value = this.value;
+	nowMailActivists.value = this.value;
 };
 oldEmail.onblur = function () {
 	oldEmailChat.value = this.value;
+	oldEmailTriangle.value = this.value;
+	oldEmailActivists.value = this.value;
 };
 
 // reset form
@@ -219,6 +223,10 @@ form.addEventListener('reset', (e) => {
 	oldEmailDiv.style.display = 'none';
 	chatDetails.style.display = 'none';
 	chatEmails.style.display = 'none';
+	triangleDetails.style.display = 'none';
+	triangleEmails.style.display = 'none';
+	activistsDetails.style.display = 'none';
+	activistsEmails.style.display = 'none';
 });
 
 // test
