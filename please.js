@@ -79,6 +79,7 @@ function validateForm() {
 				'What other action do you want us to take in your Chat settings?'
 			);
 			chatDetails.classList.add('missing');
+			oldEmail.classList.remove('missing');
 		}
 		// Chat change email with no old email alert
 		else if (
@@ -87,6 +88,9 @@ function validateForm() {
 		) {
 			messages.push('Please fill in your old email');
 			oldEmail.classList.add('missing');
+			chatDetails.classList.remove('missing');
+			triangleDetails.classList.remove('missing');
+			activistsDetails.classList.remove('missing');
 		}
 	}
 
@@ -101,6 +105,7 @@ function validateForm() {
 				'What other action do you want us to take in your Triangle settings?'
 			);
 			triangleDetails.classList.add('missing');
+			oldEmail.classList.remove('missing');
 		}
 		// Triangle change email with no old email alert
 		else if (
@@ -109,6 +114,9 @@ function validateForm() {
 		) {
 			messages.push('Please fill in your old email');
 			oldEmail.classList.add('missing');
+			chatDetails.classList.remove('missing');
+			triangleDetails.classList.remove('missing');
+			activistsDetails.classList.remove('missing');
 		}
 	}
 
@@ -123,6 +131,7 @@ function validateForm() {
 				'What other action do you want us to take in your Activists settings?'
 			);
 			activistsDetails.classList.add('missing');
+			oldEmail.classList.remove('missing');
 		}
 		// Activists change email with no old email alert
 		else if (
@@ -131,6 +140,9 @@ function validateForm() {
 		) {
 			messages.push('Please fill in your old email');
 			oldEmail.classList.add('missing');
+			chatDetails.classList.remove('missing');
+			triangleDetails.classList.remove('missing');
+			activistsDetails.classList.remove('missing');
 		}
 	}
 
