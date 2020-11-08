@@ -1,15 +1,27 @@
 const form = document.getElementById('please');
 const errorElement = document.getElementById('error');
-const successElement = document.getElementById('success');
+// main items
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const email = document.getElementById('email');
-const oldEmail = document.getElementById('oldEmail');
-const oldEmailChat = document.getElementById('oldEmailChat');
 const oldEmailDiv = document.getElementById('oldEmailDiv');
+const oldEmail = document.getElementById('oldEmail');
+// Chat
+const oldEmailChat = document.getElementById('oldEmailChat');
 const nowMailChat = document.getElementById('nowMailChat');
 const chatDetails = document.getElementById('chatDetails');
 const chatEmails = document.getElementById('chatEmails');
+// Triangle
+const oldEmailTriangle = document.getElementById('oldEmailTriangle');
+const nowMailTriangle = document.getElementById('nowMailTriangle');
+const triangleDetails = document.getElementById('triangleDetails');
+const triangleEmails = document.getElementById('triangleEmails');
+// Activists
+const oldEmailActivists = document.getElementById('oldEmailActivists');
+const nowMailActivists = document.getElementById('nowMailActivists');
+const activistsDetails = document.getElementById('activistsDetails');
+const activistsEmails = document.getElementById('activistsEmails');
+
 var triggerOldEmailDisplay = 'dont';
 
 // Validation before POST
@@ -52,7 +64,7 @@ function validateForm() {
 		activists === 'no action'
 	) {
 		messages.push(
-			'You have not asked us to change anything! You have said "Take no action" on all 3 networks'
+			'You have not asked us to change anything! You have picked "Take no action" on all 3 networks.'
 		);
 	}
 
@@ -141,14 +153,12 @@ document.forms.please.chatAction.forEach((radio) => {
 		if (document.forms.please.chatAction.value === 'subscribe Chat') {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.chatAction.value === 'unsubscribe Chat'
 		) {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.chatAction.value === 'change email Chat'
@@ -160,12 +170,10 @@ document.forms.please.chatAction.forEach((radio) => {
 		} else if (document.forms.please.chatAction.value === 'other Chat') {
 			chatDetails.style.display = 'block';
 			chatEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		}
 	});
@@ -179,7 +187,6 @@ document.forms.please.triangleAction.forEach((radio) => {
 		) {
 			triangleDetails.style.display = 'none';
 			triangleEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.triangleAction.value ===
@@ -187,7 +194,6 @@ document.forms.please.triangleAction.forEach((radio) => {
 		) {
 			triangleDetails.style.display = 'none';
 			triangleEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.triangleAction.value ===
@@ -202,12 +208,10 @@ document.forms.please.triangleAction.forEach((radio) => {
 		) {
 			triangleDetails.style.display = 'block';
 			triangleEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else {
 			triangleDetails.style.display = 'none';
 			triangleEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		}
 	});
@@ -222,7 +226,6 @@ document.forms.please.activistsAction.forEach((radio) => {
 		) {
 			activistsDetails.style.display = 'none';
 			activistsEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.activistsAction.value ===
@@ -230,7 +233,6 @@ document.forms.please.activistsAction.forEach((radio) => {
 		) {
 			activistsDetails.style.display = 'none';
 			activistsEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else if (
 			document.forms.please.activistsAction.value ===
@@ -245,12 +247,10 @@ document.forms.please.activistsAction.forEach((radio) => {
 		) {
 			activistsDetails.style.display = 'block';
 			activistsEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		} else {
 			activistsDetails.style.display = 'none';
 			activistsEmails.style.display = 'none';
-			triggerOldEmailDisplay = 'dont';
 			oldEmailDisplay();
 		}
 	});
