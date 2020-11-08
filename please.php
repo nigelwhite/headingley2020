@@ -1,43 +1,48 @@
 <?php
 
-
-
-// if honeypot not empty, show a success alert and exit
-	// if honeypot empty, process POST data
-		// if chatAction not 'none'
-			// if chatAction = subscribe or unsubscribe, send simple email
-			// if chatAction = change email address, send old address
-			// if chatAction = other, send details
-		// if triangleActio not 'none'
-			// triangle email
-		// if activistsAction not 'none'
-			// activists email
-		// show success alert
-		
-		
-       
-
-
 if(isset($_POST['fname'])){
-// print_r($_POST);
-// echo "<br />";
-// sanitise
 $fname = htmlspecialchars($_POST['fname']);
 $lname = htmlspecialchars($_POST['lname']);
-echo $fname.' '.$lname;
-echo "<br />";
 $email = htmlspecialchars($_POST['email']);
-echo $email;
-echo "<br />";
 $oldEmail = htmlspecialchars($_POST['oldEmail']);
-echo $oldEmail;
+// Chat
+$chatAction = htmlspecialchars($_POST['chatAction']);
+$chatDetails = htmlspecialchars($_POST['chatDetails']);
+// Triangle
+$triangleAction = htmlspecialchars($_POST['triangleAction']);
+$triangleDetails = htmlspecialchars($_POST['triangleDetails']);
+// Activists
+$activistsAction = htmlspecialchars($_POST['activistsAction']);
+$activistsDetails = htmlspecialchars($_POST['activistsDetails']);
+
+
+
+
+// general stuff
+echo 'Name: '.$fname.' '.$lname;
+echo "<br />";
+echo 'Email: '.$email;
+echo "<br />";
+echo 'Old email: '.$oldEmail;
+echo "<br /><hr/>";
+// chat stuff
+echo 'CHAT<br/>';
+echo 'Action: '.$chatAction;
+echo "<br />";
+echo 'Details: '.$chatDetails;
+echo "<br />";
+// triangle stuff
+echo 'TRIANGLE<br/>';
+echo 'Action: '.$triangleAction;
+echo "<br />";
+echo 'Details: '.$triangleDetails;
 echo "<br />";
 // chat stuff
-$chatAction = htmlspecialchars($_POST['chatAction']);
-echo $chatAction;
+echo 'ACTIVISTS<br/>';
+echo 'Action: '.$activistsAction;
 echo "<br />";
-$chatDetails = htmlspecialchars($_POST['chatDetails']);
-echo $chatDetails;
+echo 'Details: '.$activistsDetails;
+// redirect
 echo file_get_contents("thanks.html");
 
 }
