@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>How | headingley.org</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link type="text/css" rel="stylesheet" href="css/uikit.css" />
+		<link type="text/css" rel="stylesheet" href="css/mycss.css" />
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"
+		></script>
+		<script src="js/uikit.min.js"></script>
+	</head>
+	<body>
+		<div
+			class="uk-container uk-padding-remove uk-container-center uk-panel uk-panel-box site-my"
+		>
+			<!-- Top Navigation -->
+			<div id="navigation-top"></div>
+			<script>
+				$('#navigation-top').load('navigation-top.html');
+			</script>
+
+			<!-- Main section -->
+			<main
+				class="uk-margin uk-margin-left uk-margin-right site-content-my"
+			>
+				<div class="uk-margin-top notindex-content-my">
+					<h2 class="uk-text-center">
+						How to use the email networks
+					</h2>
+					<p class="uk-margin-large-top">
+						This web site gives access to three email networks for
+						Headingley residents. To keep spammers out, applications
+						are filtered by our volunteer team.
+					</p>
+
+					<h3>How to send an email to all subscribers of a list</h3>
+					<p>
+						When you are subscribed you can send ordinary emails to
+						the list address. These are copied to all subscribers.
+					</p>
+
+					<h3>How to reply to all subscribers</h3>
+					<p>
+						In your email software, click Reply. A new window will
+						open. If you check the To: field you will see it is
+						filled with the list address.
+					</p>
+
+					<h3>How to send your reply to only the original sender.</h3>
+					<p>
+						Look at the headers of the incoming email to find the
+						original sender's email address.
+					</p>
+
+					<h3>How to get a new password</h3>
+					<p>Each email network has a different password.</p>
+
+					<h3>How to change your mailing list settings</h3>
+					<p>Go to.....</p>
+
+					<h3>How to remove your data</h3>
+					<p>
+						If you unsubscribe from all 3 networks, all your data
+						will be removed.
+					</p>
+
+					<h3>How to spread the word</h3>
+					<p>
+						By word of mouth. Please
+						<a href="/promote">promote headingley.org</a>
+					</p>
+				</div>
+			</main>
+
+			<!-- Footer section -->
+			<footer class="uk-text-center footer-my">
+				<p class="uk-margin-top uk-margin-bottom">
+					Funded by Headingley Network
+				</p>
+			</footer>
+
+			<!-- Drawer navigation -->
+			<div id="navigation-drawer"></div>
+		</div>
+		<script type="text/javascript">
+			$(document).on('click', 'ul li', function () {
+				$('#navItems li').removeClass('uk-active');
+				$(this).addClass('uk-active');
+			});
+		</script>
+	</body>
+</html>
