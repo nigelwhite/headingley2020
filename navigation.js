@@ -3,6 +3,10 @@ $(function () {
 });
 
 $(function () {
+	$('#navigation-bottom').load('navigation-bottom.html');
+});
+
+$(function () {
 	$('#navigation-drawer').load('navigation-drawer.html');
 });
 
