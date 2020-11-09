@@ -42,6 +42,7 @@
 
 .navbar-my {
 	height: 75px;
+	margin-right: 1rem;
 }
 
 .logo-nav-my {
@@ -52,12 +53,16 @@
 	float: right;
 }
 
-#welcome .welcome,
-#about .about,
-#how .how,
-#promote .promote,
-#links .links {
-	background-color: red;
+#welcome .welcome > a,
+#about .about > a,
+#how .how > a,
+#promote .promote > a,
+#links .links > a {
+	background-color: #fafafa;
+	color: #444;
+	border-left-color: rgba(0, 0, 0, 0.1);
+	border-right-color: rgba(0, 0, 0, 0.1);
+	border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 768px) {
