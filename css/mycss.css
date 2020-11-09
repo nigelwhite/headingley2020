@@ -52,6 +52,14 @@
 	float: right;
 }
 
+#welcome .welcome,
+#about .about,
+#how .how,
+#promote .promote,
+#links .links {
+	background-color: red;
+}
+
 @media only screen and (min-width: 768px) {
 	.navbar-brand-my {
 		font-size: 23px;
