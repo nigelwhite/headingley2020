@@ -478,12 +478,17 @@
 						</div>
 
 						<!-- New subscrbers -->
-						<div class="uk-panel uk-panel-box panel-my">
-							<h4 class="uk-panel-title panel-title-my">
+						<div
+							class="uk-panel uk-panel-box panel-my panel-joining"
+						>
+							<h4
+								class="uk-panel-title panel-title-my details-color"
+							>
 								Joining details
 								<span class="uk-text-small"
 									>We don't store these details. We use them
-									to filter out spammers.</span
+									to filter out spammers, who give rubbish
+									answers.</span
 								>
 							</h4>
 							<div class="uk-grid">
@@ -538,35 +543,69 @@
 									permanently (renting or owning)</label
 								>
 								<br />
+								<input
+									type="radio"
+									id="temporary"
+									name="perspective"
+									value="temporarily living here"
+								/>
+								<label for="temporary"
+									>I am temporarily living in Headingley (eg
+									total under 3 years)</label
+								>
+								<br />
+								<input
+									type="radio"
+									id="dontReside"
+									name="perspective"
+									value="dont reside here"
+								/>
+								<label for="dontReside"
+									>I don't reside in Headingley (including:
+									I'm here only some of the year)</label
+								>
+								<p>&nbsp;</p>
+								<label for="myHope"
+									>I would like to be part of the community
+									networks so I can....</label
+								>
+								<textarea
+									name="myHope"
+									class="uk-width-1-1"
+									id="myHope"
+									cols="30"
+									rows="3"
+								></textarea>
 							</div>
 						</div>
 
 						<div
 							id="error"
-							class="uk-alert uk-alert-danger alert-my missing"
+							class="uk-alert uk-alert-danger alert-my missing uk-margin-top"
 						></div>
-
-						<button
-							class="uk-button uk-button-primary"
-							type="submit"
-							value="Submit"
-							name="submit"
-						>
-							Send
-						</button>
-						<button
-							class="uk-button uk-button-primary"
-							type="reset"
-						>
-							Reset form
-						</button>
-						<button
-							class="uk-button uk-button-primary"
-							type="button"
-							id="test"
-						>
-							Test
-						</button>
+						<div class="botton-row uk-margin-top">
+							<button
+								class="uk-button uk-button-primary"
+								type="submit"
+								value="Submit"
+								name="submit"
+							>
+								Send
+							</button>
+							<button
+								class="uk-button uk-button-primary"
+								type="reset"
+							>
+								Reset form
+							</button>
+							<button
+								class="uk-button uk-button-primary"
+								type="button"
+								id="test"
+							>
+								Test
+							</button>
+						</div>
 					</form>
 				</div>
 			</main>
