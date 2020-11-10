@@ -21,6 +21,8 @@ const oldEmailActivists = document.getElementById('oldEmailActivists');
 const nowMailActivists = document.getElementById('nowMailActivists');
 const activistsDetails = document.getElementById('activistsDetails');
 const activistsEmails = document.getElementById('activistsEmails');
+// Joining
+const joining = document.getElementById('panel-joining');
 
 var triggerOldEmailDisplay = 'dont';
 
@@ -162,6 +164,7 @@ function validateForm() {
 // chat action radio button reactions
 document.forms.please.chatAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
+		showJoining();
 		if (document.forms.please.chatAction.value === 'subscribe Chat') {
 			chatDetails.style.display = 'none';
 			chatEmails.style.display = 'none';
@@ -194,6 +197,7 @@ document.forms.please.chatAction.forEach((radio) => {
 // triangle action radio button reactions
 document.forms.please.triangleAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
+		showJoining();
 		if (
 			document.forms.please.triangleAction.value === 'subscribe Triangle'
 		) {
@@ -232,6 +236,7 @@ document.forms.please.triangleAction.forEach((radio) => {
 // activists action radio button reactions
 document.forms.please.activistsAction.forEach((radio) => {
 	radio.addEventListener('change', () => {
+		showJoining();
 		if (
 			document.forms.please.activistsAction.value ===
 			'subscribe Activists'
@@ -267,6 +272,17 @@ document.forms.please.activistsAction.forEach((radio) => {
 		}
 	});
 });
+
+// Joining panel
+function showJoining() {
+	if (
+		document.getElementById('subscribeChat').checked ||
+		document.getElementById('subscribeTriangle').checked ||
+		document.getElementById('subscribeActivists').checked
+	) {
+		joining.style.display = 'block';
+	} else joining.style.display = 'none';
+}
 
 // display oldEmail in top section if any "change my email" radio is checked
 function oldEmailDisplay() {
