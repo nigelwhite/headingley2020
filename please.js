@@ -26,6 +26,7 @@ const joining = document.getElementById('panel-joining');
 const street = document.getElementById('street');
 const postcode = document.getElementById('postcode');
 const myHope = document.getElementById('myHope');
+const perspective = document.getElementsByName('perspective');
 
 var triggerOldEmailDisplay = 'dont';
 
@@ -160,7 +161,13 @@ function validateForm() {
 		if (street.value === '') {
 			messages.push('What street do you live in?');
 			street.classList.add('missing');
-		}
+		} else if (postcode.value === '') {
+			messages.push('What is your postcode');
+			postcode.classList.add('missing');
+		} else if (myHope.value === '') {
+			messages.push('Why would you like to be part of the networks?');
+			myHope.classList.add('missing');
+		} else if ()
 	}
 
 	// if there are any errors, show the error block with the error messages in it
