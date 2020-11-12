@@ -521,7 +521,10 @@
 								</div>
 							</div>
 							<h5>My perspective</h5>
-							<div class="uk-form-controls uk-form-controls-text">
+							<div
+								class="uk-form-controls uk-form-controls-text"
+								id="perspective-div"
+							>
 								<input
 									type="radio"
 									id="longTerm"
@@ -565,10 +568,18 @@
 									>I don't reside in Headingley (including:
 									I'm here only some of the year)</label
 								>
+								<br />
+								<input
+									type="radio"
+									id="noPerspective"
+									name="perspective"
+									value="noPerspective"
+								/>
+								<label for="noPerspective">none</label>
 								<p>&nbsp;</p>
 								<label for="myHope"
-									>I would like to be part of the community
-									networks so I can....</label
+									>What are you hoping for in joining the
+									networks?</label
 								>
 								<textarea
 									name="myHope"
