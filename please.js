@@ -55,6 +55,7 @@ function validateForm() {
 	) {
 		messages.push('Last name is required');
 		lname.classList.add('missing');
+		fname.classList.remove('missing');
 	} else if (lname.value.length <= 4) {
 		messages.push('Last name must be more than 4 characters');
 		lname.classList.add('missing');
@@ -64,6 +65,7 @@ function validateForm() {
 		)
 	) {
 		messages.push('Please enter a valid email');
+		email.classList.add('missing');
 	} else if (
 		chat === 'no action' &&
 		triangle === 'no action' &&
@@ -164,10 +166,13 @@ function validateForm() {
 		} else if (postcode.value === '') {
 			messages.push('What is your postcode');
 			postcode.classList.add('missing');
+			street.classList.remove('missing');
 		} else if (myHope.value === '') {
 			messages.push('Why would you like to be part of the networks?');
 			myHope.classList.add('missing');
-		} else if ()
+			street.classList.remove('missing');
+			postcode.classList.remove('missing');
+		}
 	}
 
 	// if there are any errors, show the error block with the error messages in it
