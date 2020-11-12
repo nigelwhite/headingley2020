@@ -23,6 +23,9 @@ const activistsDetails = document.getElementById('activistsDetails');
 const activistsEmails = document.getElementById('activistsEmails');
 // Joining
 const joining = document.getElementById('panel-joining');
+const street = document.getElementById('street');
+const postcode = document.getElementById('postcode');
+const myHope = document.getElementById('myHope');
 
 var triggerOldEmailDisplay = 'dont';
 
@@ -145,6 +148,18 @@ function validateForm() {
 			chatDetails.classList.remove('missing');
 			triangleDetails.classList.remove('missing');
 			activistsDetails.classList.remove('missing');
+		}
+	}
+
+	// joining checks
+	if (
+		document.getElementById('subscribeChat').checked ||
+		document.getElementById('subscribeTriangle').checked ||
+		document.getElementById('subscribeActivists').checked
+	) {
+		if (street.value === '') {
+			messages.push('What street do you live in?');
+			street.classList.add('missing');
 		}
 	}
 
