@@ -66,6 +66,23 @@ if ($triangleAction === 'subscribe Triangle') {
         <p>'.$triangleDetails.'</p>'.$myDetails.$thanksAdmin;
     }
 
+// assemble activists
+$activistsBody = '';
+if ($activistsAction === 'subscribe Activists') {
+        $activistsBody = '<h2>Please subscribe me to Activists</h2>'.$myDetails.$joiningDetails.$thanksAdmin;
+    } elseif ($activistsAction === 'unsubscribe Activists') {
+        $activistsBody = '<h2>Please unsubscribe me from Activists</h2>'.$myDetails.$thanksAdmin;
+    } elseif ($activistsAction === 'change email Activists') {
+        $activistsBody = '<h2>Please change my email on Activists</h2>
+        <p>These are my current details -<br/>
+        Name: '.$name.'<br/>          
+        Email: '.$email.'</p>
+        <p>This is my old email: '.$oldEmail.'</p><hr/>'.$thanksAdmin;
+    } elseif ($activistsAction === 'other Activists') {
+        $activistsBody = '<h2>Please change my Activists settings as follows</h2>
+        <p>'.$activistsDetails.'</p>'.$myDetails.$thanksAdmin;
+    }
+
 
     if (! empty ($interests) || $perspective === 'dont reside here') {
         echo file_get_contents("thanks.html");
@@ -83,11 +100,7 @@ if ($triangleAction === 'subscribe Triangle') {
 
             if ($activistsAction != 'no action') {
                 // activists email
-                echo 'ACTIVISTS<br/>';
-                echo 'Action: '.$activistsAction;
-                echo "<br />";
-                echo 'Details: '.$activistsDetails;
-                echo "<br /><hr/>";
+                echo $activistsBody;
             }
 
 
