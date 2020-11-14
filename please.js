@@ -26,9 +26,17 @@ const joining = document.getElementById('panel-joining');
 const street = document.getElementById('street');
 const postcode = document.getElementById('postcode');
 const myHope = document.getElementById('myHope');
-const perspective = document.getElementsByName('perspective');
+// const perspectiveDiv = document.getElementsById('perspective-div');
 
 var triggerOldEmailDisplay = 'dont';
+
+// checks to see if any radio group has no button checked
+function validateRadio(radios) {
+	for (i = 0; i < radios.length; ++i) {
+		if (radios[i].checked) return true;
+	}
+	return false;
+}
 
 // Validation before POST
 function validateForm() {
@@ -167,6 +175,9 @@ function validateForm() {
 			messages.push('What is your postcode');
 			postcode.classList.add('missing');
 			street.classList.remove('missing');
+		} else if (!validateRadio(document.forms['please']['perspective'])) {
+			messages.push('You have not picked your perspective');
+			// perspectiveDiv.classList.add('missing');
 		} else if (myHope.value === '') {
 			messages.push('Why would you like to be part of the networks?');
 			myHope.classList.add('missing');
@@ -300,7 +311,7 @@ document.forms.please.activistsAction.forEach((radio) => {
 	});
 });
 
-// Joining panel
+// Joining panel - display only if user is wanting to subscribe
 function showJoining() {
 	if (
 		document.getElementById('subscribeChat').checked ||
