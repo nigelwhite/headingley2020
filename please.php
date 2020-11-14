@@ -21,6 +21,19 @@ $street = htmlspecialchars($_POST['street']);
 $postcode = htmlspecialchars($_POST['postcode']);
 $perspective = htmlspecialchars($_POST['perspective']);
 $myHope = htmlspecialchars($_POST['myHope']);
+// assemble stuff
+$name = $fname.' '.$lname;
+$myDetails = '<p>My details<br/>
+    Name: '.$name.'<br/>          
+    Email: '.$email.'</p><hr/>';
+// assemble chat
+$chatBody = '';
+if ($chatAction === 'subscribe Chat') {
+        $chatBody = '<h2>Please subscribe me to Chat</h2>'.$myDetails;
+    } elseif ($chatAction === 'unsubscribe Chat') {
+        $chatBody = '<h2>Please unsubscribe me from Chat</h2>'.$myDetails;
+    }
+
 
     if (! empty ($interests) || $perspective === 'dont reside here') {
         echo file_get_contents("thanks.html");
@@ -28,11 +41,7 @@ $myHope = htmlspecialchars($_POST['myHope']);
     else {
             if ($chatAction != 'no action') {
                 // chat email
-                echo 'CHAT<br/>';
-                echo 'Action: '.$chatAction;
-                echo "<br />";
-                echo 'Details: '.$chatDetails;
-                echo "<br /><hr/>";
+                echo $chatBody;
             }
             
             if ($triangleAction != 'no action') {
