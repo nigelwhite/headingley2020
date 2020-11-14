@@ -49,6 +49,23 @@ if ($chatAction === 'subscribe Chat') {
         <p>'.$chatDetails.'</p>'.$myDetails.$thanksAdmin;
     }
 
+// assemble triangle
+$triangleBody = '';
+if ($triangleAction === 'subscribe Triangle') {
+        $triangleBody = '<h2>Please subscribe me to Triangle</h2>'.$myDetails.$joiningDetails.$thanksAdmin;
+    } elseif ($triangleAction === 'unsubscribe Triangle') {
+        $triangleBody = '<h2>Please unsubscribe me from Triangle</h2>'.$myDetails.$thanksAdmin;
+    } elseif ($triangleAction === 'change email Triangle') {
+        $triangleBody = '<h2>Please change my email on Triangle</h2>
+        <p>These are my current details -<br/>
+        Name: '.$name.'<br/>          
+        Email: '.$email.'</p>
+        <p>This is my old email: '.$oldEmail.'</p><hr/>'.$thanksAdmin;
+    } elseif ($triangleAction === 'other Triangle') {
+        $triangleBody = '<h2>Please change my Triangle settings as follows</h2>
+        <p>'.$triangleDetails.'</p>'.$myDetails.$thanksAdmin;
+    }
+
 
     if (! empty ($interests) || $perspective === 'dont reside here') {
         echo file_get_contents("thanks.html");
