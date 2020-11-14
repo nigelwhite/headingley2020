@@ -1,6 +1,8 @@
 <?php
 
 if(isset($_POST['fname'])){
+$interests = htmlspecialchars($_POST['interests']);
+
 $fname = htmlspecialchars($_POST['fname']);
 $lname = htmlspecialchars($_POST['lname']);
 $email = htmlspecialchars($_POST['email']);
@@ -14,6 +16,12 @@ $triangleDetails = htmlspecialchars($_POST['triangleDetails']);
 // Activists
 $activistsAction = htmlspecialchars($_POST['activistsAction']);
 $activistsDetails = htmlspecialchars($_POST['activistsDetails']);
+// joining details
+$street = htmlspecialchars($_POST['street']);
+$postcode = htmlspecialchars($_POST['postcode']);
+$perspective = htmlspecialchars($_POST['perspective']);
+$myHope = htmlspecialchars($_POST['myHope']);
+
 
 
 
@@ -42,6 +50,15 @@ echo 'ACTIVISTS<br/>';
 echo 'Action: '.$activistsAction;
 echo "<br />";
 echo 'Details: '.$activistsDetails;
+echo "<br />";
+// joining stuff
+echo 'Street: '.$street;
+echo "<br />";
+echo 'Postcode: '.$postcode;
+echo "<br />";
+echo 'Perspective: '.$perspective;
+echo "<br />";
+echo 'My hope in joining: '.$myHope;
 // redirect
 echo file_get_contents("thanks.html");
 

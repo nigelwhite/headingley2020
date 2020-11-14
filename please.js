@@ -64,8 +64,8 @@ function validateForm() {
 		messages.push('Last name is required');
 		lname.classList.add('missing');
 		fname.classList.remove('missing');
-	} else if (lname.value.length <= 4) {
-		messages.push('Last name must be more than 4 characters');
+	} else if (lname.value.length <= 1) {
+		messages.push('Last name must be more than 1 character');
 		lname.classList.add('missing');
 	} else if (
 		!email.value.match(
@@ -179,7 +179,9 @@ function validateForm() {
 			messages.push('You have not picked your perspective');
 			// perspectiveDiv.classList.add('missing');
 		} else if (myHope.value === '') {
-			messages.push('Why would you like to be part of the networks?');
+			messages.push(
+				'What are you hoping for, in being part of the networks?'
+			);
 			myHope.classList.add('missing');
 			street.classList.remove('missing');
 			postcode.classList.remove('missing');
