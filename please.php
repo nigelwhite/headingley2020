@@ -30,8 +30,8 @@ $joiningDetails = '<p>Note to admins: we are signing up a new person, so we want
     <p>My street: '.$street.'<br/>
     My postcode: '.$postcode.'<br/>
     My perspective: '.$perspective.'<br/>
-    My hope in joinng: '.$myHope.'</p>';
-$thanksAdmin = '<hr/><p>PS (from Nigel).<br/> Dear admin volunteer - Many thanks for your work for the community.</p>';
+    My hope in joinng: '.$myHope.'</p><hr/>';
+$thanksAdmin = '<p>PS (from Nigel).<br/> Dear admin volunteer - Many thanks for your work for the community.</p><p>&nbsp;</p>';
 // assemble chat
 $chatBody = '';
 if ($chatAction === 'subscribe Chat') {
@@ -43,7 +43,7 @@ if ($chatAction === 'subscribe Chat') {
         <p>These are my current details -<br/>
         Name: '.$name.'<br/>          
         Email: '.$email.'</p>
-        <p>This is my old email: '.$oldEmail.'</p>'.$thanksAdmin;
+        <p>This is my old email: '.$oldEmail.'</p><hr/>'.$thanksAdmin;
     } elseif ($chatAction === 'other Chat') {
         $chatBody = '<h2>Please change my Chat settings as follows</h2>
         <p>'.$chatDetails.'</p>'.$myDetails.$thanksAdmin;
