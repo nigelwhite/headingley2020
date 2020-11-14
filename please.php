@@ -22,10 +22,36 @@ $postcode = htmlspecialchars($_POST['postcode']);
 $perspective = htmlspecialchars($_POST['perspective']);
 $myHope = htmlspecialchars($_POST['myHope']);
 
-    if (empty ($interests)) {
+    if (! empty ($interests) || $perspective === 'dont reside here') {
         echo file_get_contents("thanks.html");
     }
     else {
+            if ($chatAction != 'no action') {
+                // chat email
+                echo 'CHAT<br/>';
+                echo 'Action: '.$chatAction;
+                echo "<br />";
+                echo 'Details: '.$chatDetails;
+                echo "<br /><hr/>";
+            }
+            
+            if ($triangleAction != 'no action') {
+                // triangle email
+                echo 'TRIANGLE<br/>';
+                echo 'Action: '.$triangleAction;
+                echo "<br />";
+                echo 'Details: '.$triangleDetails;
+                echo "<br /><hr/>";
+            }
+
+            if ($activistsAction != 'no action') {
+                // activists email
+                echo 'ACTIVISTS<br/>';
+                echo 'Action: '.$activistsAction;
+                echo "<br />";
+                echo 'Details: '.$activistsDetails;
+                echo "<br /><hr/>";
+            }
 
 
 
@@ -36,24 +62,8 @@ $myHope = htmlspecialchars($_POST['myHope']);
     echo "<br />";
     echo 'Old email: '.$oldEmail;
     echo "<br /><hr/>";
-    // chat stuff
-    echo 'CHAT<br/>';
-    echo 'Action: '.$chatAction;
-    echo "<br />";
-    echo 'Details: '.$chatDetails;
-    echo "<br />";
-    // triangle stuff
-    echo 'TRIANGLE<br/>';
-    echo 'Action: '.$triangleAction;
-    echo "<br />";
-    echo 'Details: '.$triangleDetails;
-    echo "<br />";
-    // chat stuff
-    echo 'ACTIVISTS<br/>';
-    echo 'Action: '.$activistsAction;
-    echo "<br />";
-    echo 'Details: '.$activistsDetails;
-    echo "<br />";
+    
+    
     // joining stuff
     echo 'Street: '.$street;
     echo "<br />";
