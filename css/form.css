@@ -31,7 +31,8 @@
 #activistsDetails,
 #activistsEmails,
 #oldEmailDiv,
-#success {
+#success,
+.interests {
 	display: none;
 }
 
