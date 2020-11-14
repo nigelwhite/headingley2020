@@ -32,6 +32,17 @@ $joiningDetails = '<p>Note to admins: we are signing up a new person, so we want
     My perspective: '.$perspective.'<br/>
     My hope in joinng: '.$myHope.'</p><hr/>';
 $thanksAdmin = '<p>PS (from Nigel).<br/> Dear admin volunteer - Many thanks for your work for the community.</p><p>&nbsp;</p>';
+
+// prepare destination of email
+$toChat = 'chat-caretaker@headingley.org';
+$toTriangle = 'triangle-caretaker@headingley.org';
+$toActivists = 'activists-caretaker@headingley.org';
+$subject = 'Settings on headingley mailing list from '.$name;
+// Email headers
+$headers = "MIME-Version: 1.0" ."\r\n";
+$headers .= "Content-Type:text/html;charset=UTF-8" . "\r\n";
+$headers .= "From: " .$name. "<".$email.">". "\r\n";
+
 // assemble chat
 $chatBody = '';
 if ($chatAction === 'subscribe Chat') {
@@ -90,39 +101,19 @@ if ($activistsAction === 'subscribe Activists') {
     else {
             if ($chatAction != 'no action') {
                 // chat email
-                echo $chatBody;
+                mail($toChat, $subject, $chatBody, $headers);
             }
             
             if ($triangleAction != 'no action') {
                 // triangle email
-                echo $triangleBody;
+                mail($toTriangle, $subject, $triangleBody, $headers);
             }
 
             if ($activistsAction != 'no action') {
                 // activists email
-                echo $activistsBody;
+                mail($toActivists, $subject, $activistsBody, $headers);
             }
 
-
-
-    // general stuff
-    // echo 'Name: '.$fname.' '.$lname;
-    // echo "<br />";
-    // echo 'Email: '.$email;
-    // echo "<br />";
-    // echo 'Old email: '.$oldEmail;
-    // echo "<br /><hr/>";
-    
-    
-    // // joining stuff
-    // echo 'Street: '.$street;
-    // echo "<br />";
-    // echo 'Postcode: '.$postcode;
-    // echo "<br />";
-    // echo 'Perspective: '.$perspective;
-    // echo "<br />";
-    // echo 'My hope in joining: '.$myHope;
-    // redirect
     echo file_get_contents("thanks.html");
 
     }
