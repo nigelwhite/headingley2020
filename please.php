@@ -26,7 +26,7 @@ $name = $fname.' '.$lname;
 $myDetails = '<p>My details are -<br/>
     Name: '.$name.'<br/>          
     Email: '.$email.'</p><hr/>';
-$joiningDetails = '<p>Note to admins: we are signing up a new person, so we want to be sure they are a genuine Headingley resident. You can tell by scanning the answers they give to these 4 questions. You do not need to check for accuracy - it is usually obvious.</p>
+$joiningDetails = '<p>Note to admins: we are signing up a new person, so we want to be sure they are a genuine Headingley resident. You can tell by scanning the answers they give to these 4 questions. You do not need to check for accuracy - it is usually obvious. We do not keep a record of this information.</p>
     <p>My street: '.$street.'<br/>
     My postcode: '.$postcode.'<br/>
     My perspective: '.$perspective.'<br/>
@@ -78,11 +78,7 @@ if ($triangleAction === 'subscribe Triangle') {
             
             if ($triangleAction != 'no action') {
                 // triangle email
-                echo 'TRIANGLE<br/>';
-                echo 'Action: '.$triangleAction;
-                echo "<br />";
-                echo 'Details: '.$triangleDetails;
-                echo "<br /><hr/>";
+                echo $triangleBody;
             }
 
             if ($activistsAction != 'no action') {
