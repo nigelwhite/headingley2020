@@ -111,3 +111,15 @@
 .panel-joining {
 	display: none;
 }
+
+.fliers {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flier {
+	border: 1px solid black;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
+}
