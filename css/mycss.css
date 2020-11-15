@@ -114,7 +114,22 @@
 
 .fliers {
 	display: flex;
-	justify-content: space-evenly;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.second-flier {
+	margin-top: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+	.fliers {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	.second-flier {
+		margin-top: 0;
+	}
 }
 
 .flier {
